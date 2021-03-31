@@ -1,3 +1,4 @@
+#Minimal backup exclude files
 .cache/***
 .nvm/***
 .config/Code/***

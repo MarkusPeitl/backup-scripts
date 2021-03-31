@@ -1,9 +1,8 @@
 $EXCLUDES_LIST_DIR=$1
 $TARGET_PATH=$2
 
-
-if [ -z $TARGET_PATH ]; then
-    TARGET_PATH=/media/pmarkus/Volume/backups
+if [ -z $EXCLUDES_LIST_DIR ]; then
+    EXCLUDES_LIST_DIR=exclude_lists/main
 fi;
 if [ -z $TARGET_PATH ]; then
     TARGET_PATH=/media/pmarkus/Volume/backups
@@ -28,10 +27,10 @@ fi
 # -------------- 3 main things to back up
 
 #Backup hidden config files
-sudo rsync -avr --exclude-from $EXCLUDES_LIST_DIR/exclude_hidden_home.list ~/.*** $TARGET_PATH/homedotfiles/
+sudo rsync -avr --exclude-from $EXCLUDES_LIST_DIR/exclude_hidden_home.list --exclude $TARGET_PATH ~/.*** $TARGET_PATH/homedotfiles/
 
 #Backup home dir
-sudo rsync -avr --exclude-from $EXCLUDES_LIST_DIR/exclude_shown_home.list ~/*** $TARGET_PATH/homeshownfiles/
+sudo rsync -avr --exclude-from $EXCLUDES_LIST_DIR/exclude_shown_home.list --exclude $TARGET_PATH ~/*** $TARGET_PATH/homeshownfiles/
 
 #Backup root
-sudo rsync -avr --exclude-from $EXCLUDES_LIST_DIR/exclude_root_fs.list /*** $TARGET_PATH/rootfiles/
+sudo rsync -avr --exclude-from $EXCLUDES_LIST_DIR/exclude_root_fs.list --exclude $TARGET_PATH /*** $TARGET_PATH/rootfiles/

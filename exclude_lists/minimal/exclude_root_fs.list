@@ -1,3 +1,4 @@
+#Minimal backup exclude files
 /var/lib/snapd/snaps/***
 /var/lib/snapd/cache/***
 /var/lib/docker/***

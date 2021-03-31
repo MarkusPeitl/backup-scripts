@@ -1,3 +1,4 @@
+#Minimal backup exclude files
 miniconda3/***
 repos/***
 Steam/***
