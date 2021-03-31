@@ -9,6 +9,8 @@ detectinstallpkg() {
 		sudo pacman -S $1
 	elif systemhasprogram yum ; then
 		sudo yum install $1
+	elif systemhasprogram dnf ; then
+		sudo dnf install $1
 	else
 		echo 'No package manager found - not installing $1'
 	fi;
