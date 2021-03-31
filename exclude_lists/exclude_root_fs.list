@@ -1,0 +1,28 @@
+/var/lib/snapd/snaps/***
+/var/lib/snapd/cache/***
+/var/lib/docker/***
+/var/lib/manjaro-tools/***
+/var/lib/manjaro-tools/buildiso/***
+/var/tmp/***
+/var/log/***
+/var/crash/***
+/var/cache/***
+/run/***
+/root/VirtualBox VMs/***
+/swap.img
+/media/***
+/home/***
+/proc/***
+/media/***
+
+#If libdump was created and can be reinstalled
+/lib/***
+/lib32/***
+/lib64/***
+/libx32/***
+/bin/***
+/sbin/***
+
+#Not sure about those
+/snap/
+/var/snap
