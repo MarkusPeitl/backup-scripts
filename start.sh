@@ -1,10 +1,7 @@
-TARGET_DIR_PATH=/media/pmarkus/Volume/backups
+source settings.sh
 
-bash create-lib-dumps.sh
-
-bash create-dpkg-dump.sh
-
+bash pkg_dumps/create-all-pkg-dumps.sh
 
 #bash rsync-dot-home-root-backup.sh exclude_lists/minimal $TARGET_DIR_PATH
 
-bash rsync-dot-home-root-backup.sh exclude_lists/main $TARGET_DIR_PATH
+bash rsync-dot-home-root-backup.sh exclude_lists/main $TARGET_BACKUP_DIR_PATH

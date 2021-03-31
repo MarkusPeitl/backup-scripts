@@ -24,13 +24,23 @@ if [ ! -f "$EXC_HIDDEN_HOME" ]; then
     exit 4
 fi
 
+CURRENT_TIME="$(date '+%Y-%m-%d_%H:%M:%S')"
+BACKUP_PATH="${TARGET_PATH}/${CURRENT_TIME}"
+
 # -------------- 3 main things to back up
 
 #Backup hidden config files
-sudo rsync -avr --exclude-from $EXCLUDES_LIST_DIR/exclude_hidden_home.list --exclude $TARGET_PATH ~/.*** $TARGET_PATH/homedotfiles/
+if [ $DOT_BACKUP ]; then
+    bash rsync-incremental.sh ~/.*** $EXCLUDES_LIST_DIR/exclude_hidden_home.list $TARGET_PATH/homedotfiles
+fi;
+
 
 #Backup home dir
-sudo rsync -avr --exclude-from $EXCLUDES_LIST_DIR/exclude_shown_home.list --exclude $TARGET_PATH ~/*** $TARGET_PATH/homeshownfiles/
+if [ $HOME_BACKUP ]; then
+    bash rsync-incremental.sh ~/*** $EXCLUDES_LIST_DIR/exclude_shown_home.list $TARGET_PATH/homeshownfiles
+fi;
 
 #Backup root
-sudo rsync -avr --exclude-from $EXCLUDES_LIST_DIR/exclude_root_fs.list --exclude $TARGET_PATH /*** $TARGET_PATH/rootfiles/
+if [ $ROOT_BACKUP ]; then
+    bash rsync-incremental.sh ~/.*** $EXCLUDES_LIST_DIR/exclude_root_fs.list $TARGET_PATH/rootfiles
+fi;
