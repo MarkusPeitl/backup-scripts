@@ -19,13 +19,18 @@ fi;
 #Backup and create hardlinks to latest if files not changed
 #--delete files if they are not at the source anymore
 #-a archive, -v verbose, -r recursive
-sudo rsync -arq \
+sudo rsync -avq \
 --delete \
+--include="*/" \
 --exclude-from $EXCLUDE_LIST_FILE_PATH \
 --exclude $TARGET_PATH_DIR \
 --link-dest $LATEST_DIR_PATH \
-/home/pmarkus/.*** \
+/home/pmarkus/.??* \
 $CURRENT_BACKUP_PATH
+
+#/home/pmarkus/.[^.]* \
+#/home/pmarkus/.*** \
+#/path/to/dir/.??*
 
 #Remove symlink to the latest backup
 rm -rf "${LATEST_DIR_PATH}"
