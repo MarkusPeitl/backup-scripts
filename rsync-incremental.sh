@@ -30,7 +30,8 @@ $CURRENT_BACKUP_PATH
 
 #/home/pmarkus/.[^.]* \
 #/home/pmarkus/.*** \
-#/path/to/dir/.??*
+#/path/to/dir/.??*  1 dot, 2 any chars, wildcard match
+#bash compliant dot pattern find ~/.*[!.]*  1 dot, not a dot (not match), wildcard match
 
 #Remove symlink to the latest backup
 rm -rf "${LATEST_DIR_PATH}"
