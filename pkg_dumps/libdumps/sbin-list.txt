@@ -1,3 +1,10 @@
+a2disconf
+a2dismod
+a2dissite
+a2enconf
+a2enmod
+a2ensite
+a2query
 aa-remove-unknown
 aa-status
 aa-teardown
@@ -13,6 +20,9 @@ alsabat-test
 alsactl
 alsa-info
 anacron
+apache2
+apache2ctl
+apachectl
 apparmor_parser
 apparmor_status
 applygnupgdefaults
@@ -53,6 +63,7 @@ cfdisk
 cgdisk
 chat
 chcpu
+check_forensic
 chgpasswd
 chmem
 chpasswd
@@ -183,6 +194,7 @@ halt
 haveged
 hddtemp
 hdparm
+httxt2dbm
 hwclock
 hwinfo
 iconvconfig
@@ -356,6 +368,9 @@ partprobe
 pccardctl
 pdata_tools
 pg_updatedicts
+phpdismod
+phpenmod
+phpquery
 pivot_root
 plipconfig
 plymouthd
@@ -432,6 +447,7 @@ shutdown
 slattach
 sload.f2fs
 spice-vdagentd
+split-logfile
 sshd
 start-stop-daemon
 sudo_logsrvd
@@ -481,6 +497,7 @@ update-default-ispell
 update-default-wordlist
 update-dictcommon-aspell
 update-dictcommon-hunspell
+update-fmtutil
 update-fonts-alias
 update-fonts-dir
 update-fonts-scale
@@ -493,6 +510,10 @@ update-inetd
 update-info-dir
 update-initramfs
 update-java-alternatives
+update-language
+update-language-dat
+update-language-def
+update-language-lua
 update-locale
 update-mime
 update-passwd
@@ -500,6 +521,10 @@ update-pciids
 update-pepperflashplugin-nonfree
 update-rc.d
 update-secureboot-policy
+update-texmf
+update-texmf-config
+update-tl-stacked-conffile
+update-updmap
 update-xmlcatalog
 usb_modeswitch
 usb_modeswitch_dispatcher

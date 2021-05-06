@@ -1,0 +1,1 @@
+bash pkg_dumps/create-all-pkg-dumps.sh
